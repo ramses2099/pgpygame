@@ -1,31 +1,12 @@
-import pygame
-from sys import exit
+from game import Game
 
-WIDTH, HEIGHT = 600, 500
-TITLE = "Test "
-
-pygame.init()
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption(TITLE)
-clock = pygame.time.Clock()
-
-
-
-def draw():
-    pass
+g = Game()
 
 
 def main():
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                exit()
-
-            # game code
-
-            pygame.display.update()
-            clock.tick(60)
+    while g.running:
+        g.playing = True
+        g.game_loop()
 
 
 if __name__ == "__main__":
